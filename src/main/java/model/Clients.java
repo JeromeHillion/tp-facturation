@@ -1,16 +1,16 @@
 package model;
 
-public class Client {
+public class Clients {
     private String num;
     private String nom;
     private String pnom;
     private String loc;
     private String pays;
-public Client(){
+public Clients(){
 
 }
 
-    public Client(String num, String nom, String pnom, String loc, String pays) {
+    public Clients(String num, String nom, String pnom, String loc, String pays) {
         this.num = num;
         this.nom = nom;
         this.pnom = pnom;

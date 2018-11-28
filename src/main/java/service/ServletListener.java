@@ -1,8 +1,11 @@
 package service;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
 
-import javax.security.auth.login.Configuration;
+
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import freemarker.template.Template;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

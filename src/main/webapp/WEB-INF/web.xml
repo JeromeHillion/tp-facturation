@@ -17,12 +17,12 @@
 
     <context-param>
         <param-name>nameBDD</param-name>
-        <param-value>exemple</param-value>
+        <param-value>bdd_entreprise</param-value>
     </context-param>
 
     <context-param>
         <param-name>host</param-name>
-        <param-value>192.168.99.100</param-value>
+        <param-value>127.17.0.2</param-value>
     </context-param>
 
     <context-param>
@@ -36,22 +36,22 @@
 
     <servlet>
         <servlet-name>ListeClients</servlet-name>
-        <servlet-class>fr.laerce.cinema.ListeClients</servlet-class>
+        <servlet-class>fr.laerce.tpFacturation.ListeClients</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>Update</servlet-name>
-        <servlet-class>fr.laerce.cinema.Update</servlet-class>
+        <servlet-class>fr.laerce.tpFacturation.Update</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>Delete</servlet-name>
-        <servlet-class>fr.laerce.cinema.Delete</servlet-class>
+        <servlet-class>fr.laerce.tpFacturation.Delete</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>Create</servlet-name>
-        <servlet-class>fr.laerce.cinema.Create</servlet-class>
+        <servlet-class>fr.laerce.tpFacturation.Create</servlet-class>
     </servlet>
 
     <servlet-mapping>

@@ -13,7 +13,7 @@ public class Database {
     public Database(String url, String user_name, String password) {
         try {
             Class.forName("org.postgresql.Driver");
-            this.connection = DriverManager.getConnection(url, user_name, password);
+            connection = DriverManager.getConnection(url, user_name, password);
         } catch (ClassNotFoundException classNotFoundException) {
             classNotFoundException.printStackTrace();
             System.out.println("Pas de driver SQL");
@@ -35,7 +35,7 @@ public class Database {
 
 
     public PreparedStatement selectAllFromClientsByNum(String num) throws SQLException {
-        String query = "SELECT clt_num, clt_nom, clt_pnom, clt_loc, clt_pays FROM clients WHERE clt_num ?";
+        String query = "SELECT clt_num, clt_nom, clt_pnom, clt_loc, clt_pays FROM clients WHERE clt_num = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, num);
         return preparedStatement;

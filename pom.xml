@@ -5,7 +5,7 @@
     <artifactId>cinema-static</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>Cinéma statique</name>
+    <name>TP-facturation</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
@@ -44,6 +44,17 @@
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
             <version>2.3.25-incubating</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.laerce</groupId>
+            <artifactId>cinema-static</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.5</version>
         </dependency>
     </dependencies>
     <build>

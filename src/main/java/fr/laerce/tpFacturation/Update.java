@@ -1,8 +1,9 @@
-package fr.laerce.cinema;
+package fr.laerce.tpFacturation;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
+
+import freemarker.template.Template;
 import freemarker.template.TemplateException;
-import model.Client;
+import model.Clients;
 import service.Database;
 
 import javax.servlet.ServletException;
@@ -65,9 +66,9 @@ public class Update extends HttpServlet {
 //            ResultSet rs = statement.executeQuery(query);
             PreparedStatement statement = db.selectAllFromClientsByNum(id);
             ResultSet resultSet = statement.executeQuery();
-            Client client = null;
+            Clients client = null;
             while (resultSet.next()) {
-                client = new Client(resultSet.getString("clt_num"),
+                client = new Clients(resultSet.getString("clt_num"),
                         resultSet.getString("clt_nom"),
                         resultSet.getString("clt_pnom"),
                         resultSet.getString("clt_loc"),

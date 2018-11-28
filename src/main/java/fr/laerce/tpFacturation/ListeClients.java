@@ -1,16 +1,17 @@
-package fr.laerce.cinema;
+package fr.laerce.tpFacturation;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
-import model.Client;
+
+import model.Clients;
 import service.Database;
+import freemarker.template.Template;
+import freemarker.template.TemplateException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +22,7 @@ public class ListeClients extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
-        super.doGet(httpServletRequest, httpServletResponse);
+
 
         Database database = (Database) getServletContext().getAttribute("database");
         Template listeClients = (Template) getServletContext().getAttribute("listeClients");
@@ -30,9 +31,9 @@ public class ListeClients extends HttpServlet {
             // requête SQL de type SELECT
             PreparedStatement preparedStatement = database.selectAllFromClients();
             ResultSet resultSet = preparedStatement.executeQuery();
-            List<Client> clients = new ArrayList<>();
+            List<Clients> clients = new ArrayList<>();
             while (resultSet.next()) {
-                clients.add(new Client(resultSet.getString("clt_num"),
+                clients.add(new Clients(resultSet.getString("clt_num"),
                         resultSet.getString("clt_nom"),
                         resultSet.getString("clt_pnom"),
                         resultSet.getString("clt_loc"),
@@ -41,7 +42,7 @@ public class ListeClients extends HttpServlet {
 
             Map<String, Object> datas = new HashMap<>();
             datas.put("clients", clients);
-            listeClients.process(datas, httpServletRequest.getWriter());
+            listeClients.process(datas, httpServletResponse.getWriter());
         }
         catch(SQLException sqlexception){
             sqlexception.printStackTrace();

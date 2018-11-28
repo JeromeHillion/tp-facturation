@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cinema-static" />
+        <module name="tp-facturation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cinema-static" target="1.8" />
+      <module name="tp-facturation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
